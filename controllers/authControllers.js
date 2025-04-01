@@ -2,7 +2,7 @@
 
 const UserModel = require("../models/UserModel");
 const bcrypt = require('bcryptjs');
-const { authenticateWithGoogle } = require("../utils/googleAuth");
+//const { authenticateWithGoogle } = require("../utils/googleAuth");
 const { sendToken } = require("../utils/sendtoken");
 
 
@@ -247,7 +247,7 @@ const loginUserNormal = async (req, res) => {
     }
 };*/
 
-const googleLogin = async (req, res) => {
+/*const googleLogin = async (req, res) => {
    //console.log("Google Login Request:", req.body);
     try {
         const { code } = req.body;
@@ -266,7 +266,7 @@ const googleLogin = async (req, res) => {
         console.error("❌ Google Login Failed:", error.message);
         return res.status(500).json({ message: "Server error", error: error.message });
     }
-};
+};*/
 
 
 
