@@ -2,7 +2,7 @@
 
 const UserModel = require("../models/UserModel");
 const bcrypt = require('bcryptjs');
-const { authenticateWithGoogle, authenticateRegister } = require("../utils/googleAuth");
+const { authenticateWithGoogle } = require("../utils/googleAuth");
 const { sendToken } = require("../utils/sendtoken");
 
 
