@@ -81,7 +81,6 @@ const UserSchema = new mongoose.Schema({
         default: Date.now
     }
 });
-UserSchema.index({ email: 1 });  // This ensures an index is created on the 'email' field in ascending order
 
 const UserModel = mongoose.model('User', UserSchema);
 module.exports = UserModel;

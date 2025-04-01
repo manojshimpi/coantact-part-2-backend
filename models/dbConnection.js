@@ -10,7 +10,7 @@ const  mongoose = require('mongoose');
 // module.exports = mongoose
 
 
-const DB_URL = process.env.NODE_ENV === 'prod' ? process.env.DB_URL : process.env.DB_URL_LOCAL;
+const DB_URL = process.env.NODE_ENV === 'prod' ? process.env.DB_URL : process.env.DB_URL;
 
 mongoose.connect(DB_URL)
   .then(() => {
