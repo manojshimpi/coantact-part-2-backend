@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: conatact-app
+    env: node
+    plan: free
+    buildCommand: 'npm install'
+    startCommand: 'npm start'
+    branch: master
+    envVars:
+      - key: PORT
+        value: "5000"
+      - key: FRONTEND_URL
+        value: "http://localhost:5173"
+      - key: DB_URL
+        value: "mongodb+srv://shimpim12:wPVVvyhHWBpzwgPk@auth.ptldk.mongodb.net/auth_google?retryWrites=true&w=majority&appName=auth"
+      - key: JWT_SECRET
+        value: "secrets"
+      - key: JWT_TIMEOUT
+        value: "12h"
+      - key: NODE_ENV
+        value: "prod"
+      - key: DB_URL_LOCAL
+        value: "mongodb://localhost:27017/auth_google"

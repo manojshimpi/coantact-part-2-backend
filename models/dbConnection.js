@@ -12,7 +12,11 @@ const  mongoose = require('mongoose');
 
 const DB_URL = process.env.NODE_ENV === 'prod' ? process.env.DB_URL : process.env.DB_URL_LOCAL;
 
-mongoose.connect(DB_URL)
+mongoose.connect(DB_URL,{
+  serverSelectionTimeoutMS: 50000,  // Increase this timeout
+  socketTimeoutMS: 45000 , // Adjust socket timeout
+ 
+})
   .then(() => {
     console.log("Database connected");
   })
