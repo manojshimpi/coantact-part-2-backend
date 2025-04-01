@@ -186,6 +186,7 @@ const loginUserNormal = async (req, res) => {
         // Find the user by email
         const user = await UserModel.findOne({ email });
         
+        
         if (!user) {
             return res.status(400).json({ message: "Invalid email or password" });
         }
