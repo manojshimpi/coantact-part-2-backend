@@ -178,33 +178,41 @@ const loginUserNormal = async (req, res) => {
     try {
         const { email, password } = req.body;
         
-         console.log("Login user:", req.body);
-        // Check if email is provided
+        // Check if email and password are provided
         if (!email || !password) {
             return res.status(400).json({ message: "Email and password are required" });
         }
 
         // Find the user by email
         const user = await UserModel.findOne({ email });
-
+        
         if (!user) {
             return res.status(400).json({ message: "Invalid email or password" });
         }
 
-        // Compare the hashed password with the provided password
+        // Compare the provided password with the stored hashed password
         const isMatch = await bcrypt.compare(password, user.password);
-
+        
         if (!isMatch) {
             return res.status(400).json({ message: "Invalid email or password" });
         }
 
-        // If the credentials match, return user info and possibly a JWT token
-        // Here you might generate and return a JWT token for the session
-         const token = sendToken(user);
+        // Generate and send the JWT token (If JWT is being used)
+        const token = sendToken(user);
+
+        // Return only the necessary information (user details without the password)
+        const userResponse = {
+            _id: user._id,
+            email: user.email,
+            name: user.name, // Add any other fields you want to send back, except password
+            // Avoid returning sensitive fields like 'password', 'salt', etc.
+        };
+
+        // Send response with a success message and the token
         return res.status(200).json({
             message: "Login successful",
-            user: user,
-            token: token,  // Optionally return a JWT token for further requests
+            user: userResponse,  // Send the sanitized user info
+            token: token,         // Send the generated JWT token
         });
     } catch (error) {
         console.error("❌ Login failed:", error.message);

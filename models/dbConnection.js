@@ -12,16 +12,22 @@ const  mongoose = require('mongoose');
 
 const DB_URL = process.env.NODE_ENV === 'prod' ? process.env.DB_URL : process.env.DB_URL_LOCAL;
 
-mongoose.connect(DB_URL,{
-  serverSelectionTimeoutMS: 50000,  // Increase this timeout
-  socketTimeoutMS: 45000 , // Adjust socket timeout
- 
+
+if (!DB_URL) {
+  console.error("Error: DB_URL is not defined. Please check your environment variables.");
+}
+
+mongoose.connect(DB_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  serverSelectionTimeoutMS: 50000,  // Increased timeout for server selection
+  socketTimeoutMS: 45000,          // Increased socket timeout
 })
   .then(() => {
     console.log("Database connected");
   })
   .catch((err) => {
-    console.error("Database connection error:", err);
+    console.error("Database connection error:", err.message || err);
   });
 
 module.exports = mongoose;
