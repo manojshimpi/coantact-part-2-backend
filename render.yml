@@ -10,7 +10,7 @@ services:
       - key: PORT
         value: "5000"
       - key: FRONTEND_URL
-        value: "https://snazzy-pithivier-51eeaa.netlify.app"
+        value: "https://contactdirectorys.netlify.app"
       - key: DB_URL
         value: "mongodb+srv://shimpim12:wPVVvyhHWBpzwgPk@auth.ptldk.mongodb.net/auth_google?retryWrites=true&w=majority&appName=auth"
       - key: JWT_SECRET
