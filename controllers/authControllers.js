@@ -256,7 +256,7 @@ const loginUserNormal = async (req, res) => {
     }
 };*/
 
-/*const googleLogin = async (req, res) => {
+const googleLogin = async (req, res) => {
    //console.log("Google Login Request:", req.body);
     try {
         const { code } = req.body;
@@ -275,7 +275,7 @@ const loginUserNormal = async (req, res) => {
         console.error("❌ Google Login Failed:", error.message);
         return res.status(500).json({ message: "Server error", error: error.message });
     }
-};*/
+};
 
 
 
@@ -394,4 +394,4 @@ const updatePasswordNewPassword = async (req, res) => {
     }
   };
 
-module.exports = { userinfo , registerNormalUser , loginUserNormal , updateUserProfile , updateUserNotificationSettings, updatePasswordNewPassword};
+module.exports = { googleLogin,userinfo , registerNormalUser , loginUserNormal , updateUserProfile , updateUserNotificationSettings, updatePasswordNewPassword};
