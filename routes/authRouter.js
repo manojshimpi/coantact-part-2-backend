@@ -1,5 +1,5 @@
 const express = require("express");
-const { googleLogin, userinfo, registerUser, registerNormalUser, loginUserNormal, updateUserProfile, updateUserNotificationSettings, updatePasswordNewPassword } = require("../controllers/authControllers");
+const {userinfo, registerUser, registerNormalUser, loginUserNormal, updateUserProfile, updateUserNotificationSettings, updatePasswordNewPassword } = require("../controllers/authControllers");
 const isAuthenticated = require("../middleware/verifytoken");
 const UserModel = require("../models/UserModel");
 const upload = require("../utils/multer");
@@ -11,7 +11,7 @@ authRouter.get("/test", (req, res) => {
     res.json({ message: "Hello World1" });
 });
 
-authRouter.post("/google", googleLogin);
+//authRouter.post("/google", googleLogin);
 
 authRouter.post("/normallogin", loginUserNormal);
 

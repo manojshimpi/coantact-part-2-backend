@@ -385,4 +385,4 @@ const updatePasswordNewPassword = async (req, res) => {
     }
   };
 
-module.exports = { googleLogin, userinfo , registerNormalUser , loginUserNormal , updateUserProfile , updateUserNotificationSettings, updatePasswordNewPassword};
+module.exports = { userinfo , registerNormalUser , loginUserNormal , updateUserProfile , updateUserNotificationSettings, updatePasswordNewPassword};
