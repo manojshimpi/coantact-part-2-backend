@@ -1,0 +1,24 @@
+2025-03-21T13:56:51.116Z error: Unexpected non-whitespace character after JSON at position 146 (line 6 column 6)
+SyntaxError: Unexpected non-whitespace character after JSON at position 146 (line 6 column 6)
+    at JSON.parse (<anonymous>)
+    at parse (C:\xampp\htdocs\Vite-Projects\Final Projects\Contactdiary\contactdiarybackend\node_modules\body-parser\lib\types\json.js:92:19)
+    at C:\xampp\htdocs\Vite-Projects\Final Projects\Contactdiary\contactdiarybackend\node_modules\body-parser\lib\read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:211:14)
+    at invokeCallback (C:\xampp\htdocs\Vite-Projects\Final Projects\Contactdiary\contactdiarybackend\node_modules\raw-body\index.js:238:16)
+    at done (C:\xampp\htdocs\Vite-Projects\Final Projects\Contactdiary\contactdiarybackend\node_modules\raw-body\index.js:227:7)
+    at IncomingMessage.onEnd (C:\xampp\htdocs\Vite-Projects\Final Projects\Contactdiary\contactdiarybackend\node_modules\raw-body\index.js:287:7)
+    at IncomingMessage.emit (node:events:524:28)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+2025-03-26T06:06:48.060Z error: request entity too large
+PayloadTooLargeError: request entity too large
+    at readStream (C:\xampp\htdocs\Vite-Projects\Final Projects\Contactdiary\contactdiarybackend\node_modules\raw-body\index.js:163:17)
+    at getRawBody (C:\xampp\htdocs\Vite-Projects\Final Projects\Contactdiary\contactdiarybackend\node_modules\raw-body\index.js:116:12)
+    at read (C:\xampp\htdocs\Vite-Projects\Final Projects\Contactdiary\contactdiarybackend\node_modules\body-parser\lib\read.js:79:3)
+    at jsonParser (C:\xampp\htdocs\Vite-Projects\Final Projects\Contactdiary\contactdiarybackend\node_modules\body-parser\lib\types\json.js:138:5)
+    at Layer.handle [as handle_request] (C:\xampp\htdocs\Vite-Projects\Final Projects\Contactdiary\contactdiarybackend\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (C:\xampp\htdocs\Vite-Projects\Final Projects\Contactdiary\contactdiarybackend\node_modules\express\lib\router\index.js:328:13)
+    at C:\xampp\htdocs\Vite-Projects\Final Projects\Contactdiary\contactdiarybackend\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\xampp\htdocs\Vite-Projects\Final Projects\Contactdiary\contactdiarybackend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\xampp\htdocs\Vite-Projects\Final Projects\Contactdiary\contactdiarybackend\node_modules\express\lib\router\index.js:280:10)
+    at expressInit (C:\xampp\htdocs\Vite-Projects\Final Projects\Contactdiary\contactdiarybackend\node_modules\express\lib\middleware\init.js:40:5)
